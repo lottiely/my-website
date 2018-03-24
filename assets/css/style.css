@@ -1,0 +1,218 @@
+/*   
+Theme Name: MyWorld
+Description: This is a the stylesheet for my website describing who I am as a person and what I do.
+Author: Shanan Almario
+Author URI: https://www.linkedin.com/in/shananalmario/
+Version: 1.0
+
+Developer notes:
+index.html will default to about me page
+
+Look into a way to load only the content section of the page without having to load the navigation and footer all the time
+*/
+
+/**
+* Init
+**/
+body{
+	background-color:white;
+    font-family: helvetica, Arial, sans-serif;
+    font-style: normal;
+    margin:0;
+}
+
+img{
+	vertical-align:middle
+}
+
+.logo{
+	margin-top:5em;
+}
+
+/**
+* Heading and Paragraphs  
+*/
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+
+h1 {
+    font-size: 2.75em;
+    line-height: 1.0909090909090908em;
+    margin-top: 0.8181818181818181em;
+    margin-bottom: 0.27272727272727em;
+}
+
+h2 {
+    font-size: 1.9375em;
+    line-height: 1.5483870967741935em;
+    margin-top: 0.7741935483870968em;
+    margin-bottom: 0em;
+}
+
+h3 {
+    font-size: 1.375em;
+    line-height: 1.0909090909090908em;
+    margin-top: 1.0909090909090908em;
+    margin-bottom: 0em;
+}
+
+h4 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+}
+
+h5 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+}
+
+h6 { 
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin-top: 0.8em;
+    margin-bottom: 0;
+}
+
+p{
+	color:#424949;
+	margin:0;
+}
+
+/**
+* Navigation 
+*/
+nav{
+	line-height:1em;
+	background-color: white;
+}
+.nav{
+	font-family:"Open Sans", helvetica;
+	font-size:14px;
+	letter-spacing:1px;
+	margin: 0 auto;
+	width:65%;
+}
+.nav li{
+	list-style-type: none;
+	display: inline-block;
+}
+.nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 1em;
+    color: #808B96;
+}
+
+.nav button{
+	border: none;
+    background-color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 1em;
+    color: #808B96;
+}
+
+.nav .active{
+	color: #CCD1D1;
+}
+
+nav:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/**
+* Blog Content 
+*/
+
+hr{
+	border:0;
+	height:1px;
+	background:#B1B2B7;
+	background-image:linear-gradient(to right, #D3D4D8, #B1B2B7, #D3D4D8);
+}
+
+.content-wrapper {
+    max-width: 70%;
+    width:60%;
+    height:auto;
+    overflow:hidden;
+    margin: 1em auto; 
+    border:3px solid #FCF3CF;
+    border-radius: 20px; 
+}
+
+/*
+* About Me
+*/
+.about-me-image{
+	max-width: 50%;
+    width:25%;
+    margin: 0 1em auto 0; 
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px; 
+}
+
+.about-me-content{
+	display:block;
+	margin: 0 auto;
+	padding:1em;
+	overflow:hidden;
+	line-height: 20px;
+	font-family:"Cabin";
+}
+
+/*
+* Portfolio
+*/
+.portfolio-content{
+	
+}
+
+/**
+* Footer 
+*/
+footer{
+	clear:both;
+	max-width: 75%;
+    width:50%;
+    margin: 0 auto; 
+    padding: 1px;
+}
+
+footer p{
+	color: #686970;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 1em;
+    font-size:10px;
+    letter-spacing: 1px;
+}
+
+/*footer .footer-navigation{
+	padding-bottom:0;
+}
+
+footer a{
+	color: #686970;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 1em;
+    font-size:10px;
+    letter-spacing: 1px;
+}
+
+footer li{
+	list-style-type: none;
+	display:inline;
+}*/
