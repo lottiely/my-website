@@ -121,6 +121,10 @@ nav{
     color: #808B96;
 }
 
+.nav a:hover{
+  color: #CCD1D1;
+}
+
 .nav .active{
   color: #CCD1D1;
 }
@@ -143,7 +147,7 @@ hr{
   background-image:linear-gradient(to right, #D3D4D8, #B1B2B7, #D3D4D8);
 }
 
-.content-wrapper {
+.content-wrapper { 
     max-width: 70%;
     width:60%;
     height:auto;
@@ -153,14 +157,30 @@ hr{
     border-radius: 20px; 
 }
 
+@media only screen and (max-width:800px) {
+  /* For mobile phones: */
+  .content-wrapper {
+    max-width: 70%;
+    width:60%;
+    height:auto;
+    overflow:hidden;
+    margin: 1em auto; 
+    border:3px solid #FCF3CF;
+    border-radius: 20px; 
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:center;
+
+}
+}
 /*
 * About Me
 */
-.about-me-image{
+.about-me-image{ 
   width:200px;
     height:auto;
     float:left;
-    margin: 0 1em auto 0; 
+    margin: 0.5em; 
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px; 
@@ -172,16 +192,14 @@ hr{
   padding:1em;
   overflow:hidden;
   line-height: 20px;
-  font-family:"Cabin";
+  font-family:"Questrial";
 }
 
 @media only screen and (max-width:620px) {
   /* For mobile phones: */
   .about-me-image{
-    width:80%;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
+    width:50%;
+    margin: 1em auto auto auto;
   }
 }
 
@@ -194,7 +212,7 @@ hr{
     padding:1em;
     overflow:hidden;
     line-height: 20px;
-    font-family:"Cabin";
+    font-family:"Questrial";
 }
 
 /**
