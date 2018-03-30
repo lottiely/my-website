@@ -23,21 +23,40 @@ Look into a way to load only the content section of the page without having to l
 * Init
 **/
 body{
-  background-color:white;
+  background-color:#FFFAFA;
     font-family: helvetica, Arial, sans-serif;
     font-style: normal;
-    margin:0;
+    margin-top:0;
+    padding: 0;
 }
 
 img{
   vertical-align:middle
 }
 
+ul{
+  padding: 0;
+  margin-top: 0;
+}
+
+.header{
+  background-color: #F9EDF1;
+  text-align:center;
+  line-height:2em;
+  font-family:Sacramento, helvetica;
+  font-size:36px;
+  text-decoration: none;
+  display: block;
+}
+
+.header p{
+  color: #b79c94;
+}
+
 .logo{
   display:block;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:5em;
+  margin-top:0;
+  padding:1em;
 }
 
 /**
@@ -90,7 +109,7 @@ h6 {
 }
 
 p{
-  color:#424949;
+  color: #797979;;
   margin:0;
 }
 
@@ -98,22 +117,22 @@ p{
 * Navigation 
 */
 nav{
-  line-height:1em;
-  background-color: white;
+  line-height:2em;
+  background-color: #F0F8FF;
   text-align: center;
-}
-.nav{
   font-family:"Open Sans", helvetica;
   font-size:14px;
   letter-spacing:1px;
   margin: 0 auto;
-  width:65%;
+  width:100%;
 }
-.nav li{
+
+nav ul, 
+nav .nav li{
   list-style-type: none;
-  display: inline-block;
+  display:inline-block;
 }
-.nav a{
+nav a, .dropdown-content a{
     text-decoration: none;
     text-transform: uppercase;
     display: block;
@@ -121,18 +140,52 @@ nav{
     color: #808B96;
 }
 
-.nav a:hover{
+nav a:hover, .dropdown-content a:hover{
+  background-color: transparent !important;
   color: #CCD1D1;
 }
 
-.nav .active{
+nav .active{
   color: #CCD1D1;
+  background-color: transparent !important;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile view: */
+  nav a:active, .dropdown-content a:active{
+  background-color: transparent !important;
+  color: #CCD1D1;
+}
+
+.show{
+  visibility: visible;
+}
 }
 
 nav:after {
     content: "";
     clear: both;
     display: table;
+}
+
+/**
+* Dropdown styling 
+*/
+.dropdown{
+  position:relative;
+  text-align: center;
+}
+
+.dropdown-content{
+  visibility:hidden;
+  position: absolute;
+  background: #F0F8FF;
+  left:0;
+}
+
+
+.dropdown:hover .dropdown-content{
+  visibility: visible;
 }
 
 
@@ -170,7 +223,6 @@ hr{
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
-
 }
 }
 /*

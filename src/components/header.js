@@ -1,21 +1,47 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import MediaQuery from 'react-responsive';
+
+//importing the different nav views
+import DesktopNav from './desktop-nav';
+import MobileNav from './mobile-nav';
 
 class Header extends Component {
+	constructor(props){
+		super(props);
+
+		this.state = { width: 0}
+		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+	}
+
+componentDidMount() {
+this.updateWindowDimensions();
+window.addEventListener('resize', this.updateWindowDimensions);
+}
+
+componentWillUnmount() {
+window.removeEventListener('resize', this.updateWindowDimensions);
+}
+	updateWindowDimensions(){
+		this.setState({width: window.innerWidth});
+	}
+
+	returnView(){
+		if(this.state.width > 620){
+			return <DesktopNav />;
+		} else{
+			return <MobileNav />;
+		}
+	}
+
+//<img src={require('../assets/images/intrologocolor.png')} className="logo" alt="Shanan Almario"/>
   render() {
     return (
       <div className="header">
-		<img src={require('../assets/images/intrologocolor.png')} className="logo" alt="Shanan Almario"/>
+		<p className="logo">Hi, my name is <br />
+		Shanan</p>
 
-		<nav>
-			<ul class="nav">
-				<li><NavLink exact to='/' activeClassName="active">About Me</NavLink></li> 
-				<li><NavLink to="/portfolio" activeClassName="active">Portfolio</NavLink></li>
-				<li><NavLink to="/resume" activeClassName="active">Resume</NavLink></li>
-				<li><NavLink to="/hobbies" activeClassName="active">Hobbies</NavLink></li>
-				<li><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
-			</ul>
-		</nav>
+		{this.returnView()}
       </div>
     );
   }
