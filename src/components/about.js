@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-//delete these imports when you're done debugging
-
-import LargeContent from './test/lots-of-content';
-
 class About extends Component {
 
   render() {
@@ -18,6 +14,9 @@ class About extends Component {
       I am currently in the Bay Area on the hunt for my new favorite boba place. 
       I recently graduated from the University of Alaska Anchorage with a Bachelor's of Science in Computer Systems Engineering, and I am currently exploring opportunities to enter the tech industry. 
       Topics where I have taken particular interest are front-end engineering and machine learning!
+      <br />
+      <br />
+      I am currently looking to take on internships or a junior position within my major, and I am also open to volunteer for tech-related events or organizations!
       <br />
       <br />
       But when I'm not coding away, I am a baker, figure skater, artist, fiction writer, casual gamer, and fashion enthusiast.</p>

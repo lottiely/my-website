@@ -12,27 +12,33 @@ class MobileNav extends Component {
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
 	}
 
-handleClick(){
-	if(!this.state.popupVisible){
-		//attach/remove event handler
-		document.addEventListener('click', this.handleOutsideClick, false);
-	}
-
-	this.setState(prevState=> ({
-		isHidden: !prevState.isHidden,
-	}));
+componentWillMount(){
+	document.addEventListener('click', this.handleOutsideClick, false);
 }
 
 componentWillUnmount(){
 	document.removeEventListener("click", this.handleOutsideClick, false);
 }
 
-handleOutsideClick(e){
-	//ignore clicks on the component itself
+handleClick = (e) => {
 	if(this.node.contains(e.target)){
-		return;
+		this.setState(prevState=> ({
+		isHidden: !prevState.isHidden,
+	}));
+	} else{
+		this.handleOutsideClick();
 	}
-	this.handleClick();
+}
+
+handleOutsideClick(e){
+	if(this.state.isHidden === false){
+		if(this.node.contains(e.target)){
+			return
+		}
+			this.setState(prevState=> ({
+		isHidden: !prevState.isHidden,
+	}));
+		}
 }
 
 //<img src={require('../assets/images/intrologocolor.png')} className="logo" alt="Shanan Almario"/>
@@ -44,7 +50,7 @@ handleOutsideClick(e){
 		<nav>
 			<ul class="nav">
 
-				<li className="dropdown animated slideInUp" ref={node => { this.node = node; }} onClick={this.handleClick}><a>Navigation <span className="caret"></span></a>
+				<li className="dropdown animated slideInUp"><a ref={node => { this.node = node; }} onClick={this.handleClick}>Navigation <span className="caret"></span></a>
 				{this.props.children}
 				{!this.state.isHidden && <Navbar />}
 				</li>
@@ -69,5 +75,6 @@ export default MobileNav;
 /*
 *	Debugging Notes:
 *		3.28.18: Use of "exact to" so that the home page won't always be active.
-*		3.30.18: https://codepen.io/graubnla/pen/EgdgZm?editors=1010 - Referenced to deal with clicking outside of navbar component. Changes made in the code is to remove listener in the componentWillUnmount
+*		3.30.18: - https://codepen.io/graubnla/pen/EgdgZm?editors=1010 - Referenced to deal with clicking outside of navbar component. Changes made in the code is to remove listener in the componentWillUnmount
+*				 - Dropdown kept staying up when dropdown content was clicked, so I changed code to get rid of dropdown list when content is clicked. New reference: https://medium.com/@pitipatdop/little-neat-trick-to-capture-click-outside-react-component-5604830beb7f
 */

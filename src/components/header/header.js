@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import MediaQuery from 'react-responsive';
 
 //importing the different nav views
 import DesktopNav from './desktop-nav';

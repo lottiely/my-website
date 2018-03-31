@@ -24,6 +24,14 @@ Look into a way to load only the content section of the page without having to l
 /**
 * Init
 **/
+
+*::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
 body{
   background-color:#FFFAFA;
     font-family: helvetica, Arial, sans-serif;
@@ -186,10 +194,8 @@ nav:after {
 }
 
 
-
-
 /**
-* Blog Content 
+* Content 
 */
 
 hr{
@@ -257,13 +263,18 @@ hr{
 /*
 * Portfolio
 */
-.portfolio-content{
+
+
+/*
+* Contact
+*/
+.contact-content, .hobbies-content, .resume-content, .portfolio-content{
   display:block;
-    margin: 0 auto;
-    padding:1em;
-    overflow:hidden;
-    line-height: 20px;
-    font-family:"Questrial";
+  margin: 1em;
+  overflow:hidden;
+  line-height: 20px;
+  font-family:"Questrial";
+  text-align:center;
 }
 
 /*
