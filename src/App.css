@@ -19,6 +19,8 @@ index.html will default to about me page
 Look into a way to load only the content section of the page without having to load the navigation and footer all the time
 */
 
+@import "assets/css/animate.css";
+
 /**
 * Init
 **/
@@ -174,19 +176,16 @@ nav:after {
 .dropdown{
   position:relative;
   text-align: center;
+  z-index:999 !important;
 }
 
 .dropdown-content{
-  visibility:hidden;
   position: absolute;
   background: #F0F8FF;
   left:0;
 }
 
 
-.dropdown:hover .dropdown-content{
-  visibility: visible;
-}
 
 
 /**
@@ -267,6 +266,29 @@ hr{
     font-family:"Questrial";
 }
 
+/*
+* Top
+*/
+.scroll{
+  opacity:0.5;
+  background-color: #cce7ff;
+  width:40px;
+  height:40px;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  border-radius:5px;
+  border:none;
+}
+
+.scroll:hover {
+  opacity:1;
+}
+
+.scroll:hover .arrow-up{
+  color: #707070;
+}
+
 /**
 * Footer 
 */
@@ -275,32 +297,31 @@ footer{
   max-width: 75%;
     width:50%;
     margin: 0 auto; 
-    padding: 1px;
+    text-align:center;
+    font-family:"Questrial";
 }
 
 footer p{
   color: #686970;
     text-decoration: none;
-    text-transform: uppercase;
-    padding: 0 1em;
-    font-size:10px;
+    font-size:11px;
     letter-spacing: 1px;
 }
 
-/*footer .footer-navigation{
-  padding-bottom:0;
+.copyright {
+  text-transform: uppercase;
+  padding-bottom:1em;
 }
 
-footer a{
-  color: #686970;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0 1em;
-    font-size:10px;
-    letter-spacing: 1px;
+/**
+* Social 
+*/
+.social {
+  font-size:20px;
+  text-align:center;
 }
 
-footer li{
-  list-style-type: none;
-  display:inline;
-}*/
+.social a{
+  color:#bc8f8f;
+  padding:0.5em;
+}

@@ -38,7 +38,7 @@ window.removeEventListener('resize', this.updateWindowDimensions);
   render() {
     return (
       <div className="header">
-		<p className="logo">Hi, my name is <br />
+		<p className="logo animated fadeIn">Hi, my name is <br />
 		Shanan</p>
 
 		{this.returnView()}

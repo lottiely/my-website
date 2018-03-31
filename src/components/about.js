@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+//delete these imports when you're done debugging
+
+import LargeContent from './test/lots-of-content';
+
 class About extends Component {
+
   render() {
     return (
-      <div className="content-wrapper">
+      <div className="content-wrapper animated fadeIn">
       <img src={require('../assets/images/about-me-image.JPG')} className="about-me-image" alt="About Me"/>
 		<div className="about-me-content">
 			<p>I love food and trying new things!

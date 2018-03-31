@@ -2,28 +2,50 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 class MobileNav extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state ={
 			isHidden: true
-		}
+		}      
+
+		this.handleClick = this.handleClick.bind(this);
+        this.handleOutsideClick = this.handleOutsideClick.bind(this);
 	}
 
-toggleHidden(){
-	this.setState({
-		isHidden: !this.state.isHidden
-	})
+handleClick(){
+	if(!this.state.popupVisible){
+		//attach/remove event handler
+		document.addEventListener('click', this.handleOutsideClick, false);
+	}
+
+	this.setState(prevState=> ({
+		isHidden: !prevState.isHidden,
+	}));
+}
+
+componentWillUnmount(){
+	document.removeEventListener("click", this.handleOutsideClick, false);
+}
+
+handleOutsideClick(e){
+	//ignore clicks on the component itself
+	if(this.node.contains(e.target)){
+		return;
+	}
+	this.handleClick();
 }
 
 //<img src={require('../assets/images/intrologocolor.png')} className="logo" alt="Shanan Almario"/>
   render() {
+
     return (
       <div className="header">
 
 		<nav>
 			<ul class="nav">
 
-				<li className="dropdown" onClick={this.toggleHidden.bind(this)}><a>Navigation <span className="caret"></span></a>
+				<li className="dropdown animated slideInUp" ref={node => { this.node = node; }} onClick={this.handleClick}><a>Navigation <span className="caret"></span></a>
+				{this.props.children}
 				{!this.state.isHidden && <Navbar />}
 				</li>
 			</ul>
@@ -47,4 +69,5 @@ export default MobileNav;
 /*
 *	Debugging Notes:
 *		3.28.18: Use of "exact to" so that the home page won't always be active.
+*		3.30.18: https://codepen.io/graubnla/pen/EgdgZm?editors=1010 - Referenced to deal with clicking outside of navbar component. Changes made in the code is to remove listener in the componentWillUnmount
 */
