@@ -8,7 +8,7 @@ class Contact extends Component {
 			<p>Feel free to contact me if you have questions, inquiries, or requests! I respond best by email.
 			<br />
 			<br />
-			You can connect with me on LinkedIn or check out my GitHub!</p>
+			You can connect with me on <a href="https://www.linkedin.com/in/shananalmario/" target="_blank" rel="noopener noreferrer">LinkedIn</a> or check out my <a href="https://github.com/lottiely" target="_blank" rel="noopener noreferrer">GitHub</a>!</p>
 		</div>
       </div>
     );

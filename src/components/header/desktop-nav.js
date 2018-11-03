@@ -8,7 +8,7 @@ class DesktopNav extends Component {
     return (
       <div className="header">
 		<nav>
-			<ul class="nav">
+			<ul className="nav">
 				<li className= "animated slideInUp"><NavLink exact to='/' activeClassName="active">About Me</NavLink></li> 
 				<li className= "animated slideInUp"><NavLink to="/portfolio" activeClassName="active">Portfolio</NavLink></li>
 				<li className= "animated slideInUp"><NavLink to="/resume" activeClassName="active">Resume</NavLink></li>

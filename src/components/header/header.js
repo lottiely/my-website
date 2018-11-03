@@ -32,14 +32,14 @@ window.removeEventListener('resize', this.updateWindowDimensions);
 		}
 	}
 
+//{this.returnView()}
 //<img src={require('../assets/images/intrologocolor.png')} className="logo" alt="Shanan Almario"/>
   render() {
     return (
       <div className="header">
-		<p className="logo animated fadeIn">Hi, my name is <br />
-		Shanan</p>
+			<div className="headerimg"> </div>
 
-		{this.returnView()}
+			{this.returnView()}
       </div>
     );
   }

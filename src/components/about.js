@@ -2,25 +2,24 @@ import React, { Component } from 'react';
 
 class About extends Component {
 
+//  <img src={require('../assets/images/about-me-image.JPG')} className="about-me-image" alt="About Me"/>
   render() {
     return (
       <div className="content-wrapper animated fadeIn">
-      <img src={require('../assets/images/about-me-image.JPG')} className="about-me-image" alt="About Me"/>
 		<div className="about-me-content">
-			<p>I love food and trying new things!
+			<h3>Hello, my name is Shanan.</h3>
+      <p>
       <br />
       <br />
-      I am a small town girl trying to find a place in the big city. 
-      I am currently in the Bay Area on the hunt for my new favorite boba place. 
-      I recently graduated from the University of Alaska Anchorage with a Bachelor's of Science in Computer Systems Engineering, and I am currently exploring opportunities to enter the tech industry. 
-      Topics where I have taken particular interest are front-end engineering and machine learning!
+      I am a junior front-end engineer from Anchorage, Alaska and currently based in San Jose.
       <br />
       <br />
-      I am currently looking to take on internships or a junior position within my major, and I am also open to volunteer for tech-related events or organizations!
+      I like to do artsy things, bake, and figure skate.
       <br />
       <br />
-      But when I'm not coding away, I am a baker, figure skater, artist, fiction writer, casual gamer, and fashion enthusiast.</p>
-		</div>
+      It's pretty tough trying to summarize me and what I do,
+      so if you want to know more, you can always <a target="_top" rel="nofollow" href="mailto:saialmario1@gmail.com?Subject=Message%20From%20Your%20Website"> email</a> me. </p>
+    </div>
       </div>
     );
   }

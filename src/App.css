@@ -1,4 +1,4 @@
-/* 
+/*
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -6,7 +6,7 @@
 }
 */
 
-/*   
+/*
 Theme Name: MyWorld
 Description: This is a the stylesheet for my website describing who I am as a person and what I do.
 Author: Shanan Almario
@@ -33,7 +33,6 @@ Look into a way to load only the content section of the page without having to l
 }
 
 body{
-  background-color:#FFFAFA;
     font-family: helvetica, Arial, sans-serif;
     font-style: normal;
     margin-top:0;
@@ -41,7 +40,7 @@ body{
 }
 
 img{
-  vertical-align:middle
+  vertical-align:middle;
 }
 
 ul{
@@ -49,8 +48,11 @@ ul{
   margin-top: 0;
 }
 
+.wrapper{
+
+}
+
 .header{
-  background-color: #F9EDF1;
   text-align:center;
   line-height:2em;
   font-family:Sacramento, helvetica;
@@ -63,6 +65,33 @@ ul{
   color: #b79c94;
 }
 
+.headerimg{
+  display:block;
+  position:fixed;
+  top:0px;
+  margin:0;
+  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)), url('./assets/images/red-accent.jpg');
+
+  width:300px;
+  height:100%;
+
+  background-position:right;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile view: */
+  .headerimg{
+    width:300px;
+    height:100%;
+
+    background-position:right;
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+}
+
 .logo{
   display:block;
   margin-top:0;
@@ -70,7 +99,7 @@ ul{
 }
 
 /**
-* Heading and Paragraphs  
+* Heading and Paragraphs
 */
 h1, h2, h3, h4, h5, h6{
   font-weight:normal;
@@ -95,13 +124,14 @@ h3 {
     line-height: 1.0909090909090908em;
     margin-top: 1.0909090909090908em;
     margin-bottom: 0em;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 1em;
     line-height: 1.5em;
-    margin-top: 1.5em;
     margin-bottom: 0em;
+    font-weight:bold;
 }
 
 h5 {
@@ -111,7 +141,7 @@ h5 {
     margin-bottom: 0em;
 }
 
-h6 { 
+h6 {
     font-size: 0.8em;
     line-height: 1.5em;
     margin-top: 0.8em;
@@ -119,25 +149,42 @@ h6 {
 }
 
 p{
-  color: #797979;;
+  color: #797979;
   margin:0;
 }
 
+a{
+  display:inline-block;
+}
+
+hr{
+  border:0;
+  height:1px;
+  background:#B1B2B7;
+  background-image:linear-gradient(to right, #D3D4D8, #B1B2B7, #D3D4D8);
+}
+ul{
+  margin-left:1em;
+}
+
 /**
-* Navigation 
+* Navigation
 */
 nav{
+  background-color: rgba(0,0,0,0.4);
+  position:fixed;
+  top:0px;
   line-height:2em;
-  background-color: #F0F8FF;
-  text-align: center;
+  text-align: right;
   font-family:"Open Sans", helvetica;
   font-size:14px;
   letter-spacing:1px;
   margin: 0 auto;
   width:100%;
+  z-index:1;
 }
 
-nav ul, 
+nav ul,
 nav .nav li{
   list-style-type: none;
   display:inline-block;
@@ -147,21 +194,35 @@ nav a, .dropdown-content a{
     text-transform: uppercase;
     display: block;
     padding: 0 1em;
-    color: #808B96;
+    color: #CCD1D1;
 }
 
 nav a:hover, .dropdown-content a:hover{
   background-color: transparent !important;
-  color: #CCD1D1;
+  color: #808B96;
 }
 
 nav .active{
-  color: #CCD1D1;
+  color: #808B96;
   background-color: transparent !important;
 }
 
 @media only screen and (max-width: 620px) {
   /* For mobile view: */
+  nav{
+    text-align:right;
+  }
+
+  nav span{
+    margin-right: 1em;
+  }
+
+  .caret{
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid;
+  }
+
   nav a:active, .dropdown-content a:active{
   background-color: transparent !important;
   color: #CCD1D1;
@@ -172,14 +233,9 @@ nav .active{
 }
 }
 
-nav:after {
-    content: "";
-    clear: both;
-    display: table;
-}
 
 /**
-* Dropdown styling 
+* Dropdown styling
 */
 .dropdown{
   position:relative;
@@ -189,13 +245,13 @@ nav:after {
 
 .dropdown-content{
   position: absolute;
-  background: #F0F8FF;
-  left:0;
+  background: rgba(0,0,0,0.4);
+  right:0;
 }
 
 
 /**
-* Content 
+* Content
 */
 
 hr{
@@ -205,84 +261,121 @@ hr{
   background-image:linear-gradient(to right, #D3D4D8, #B1B2B7, #D3D4D8);
 }
 
-.content-wrapper { 
-    max-width: 70%;
-    width:60%;
+.content-wrapper {
+  float:right;
+  margin: 5em 5em 0 20em;
     height:auto;
     overflow:hidden;
-    margin: 1em auto; 
-    border:3px solid #FCF3CF;
-    border-radius: 20px; 
+    border-radius: 20px;
+    align-items:center;
+    text-align:center;
+    color: #797979;
+    max-width: 70%;
+    width:60%;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:700px) {
   /* For mobile phones: */
-  .content-wrapper {
-    max-width: 70%;
-    width:60%;
+
+  .content-wrapper{
+    color:#CCD1D1;
+    float:none;
+    max-width: 80%;
+    width:70%;
     height:auto;
     overflow:hidden;
-    margin: 1em auto; 
-    border:3px solid #FCF3CF;
-    border-radius: 20px; 
+    margin: 5em auto 0 auto;
+    border-radius: 20px;
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
+    background: rgba(0,0,0,0.5);
 }
+
+  .content-wrapper p, h1, h2, h3{
+    color:#CCD1D1;
+  }
+
+  .content-wrapper a{
+    color:#99c0ff;
+  }
 }
+
 /*
 * About Me
 */
-.about-me-image{ 
+.about-me-image, .slider-img{
   width:200px;
     height:auto;
-    float:left;
-    margin: 0.5em; 
+    margin: 0.5em;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 
-.about-me-content{
+.about-me-content, .resume-content, .portfolio-content{
   display:block;
   margin: 0 auto;
   padding:1em;
   overflow:hidden;
   line-height: 20px;
   font-family:"Questrial";
+  text-align: left;
 }
 
 @media only screen and (max-width:620px) {
   /* For mobile phones: */
-  .about-me-image{
+  .about-me-image, .slider-img, .miiru-img{
     width:50%;
     margin: 1em auto auto auto;
   }
 }
 
 /*
-* Portfolio
+* Centered Text
 */
-
-
-/*
-* Contact
-*/
-.contact-content, .hobbies-content, .resume-content, .portfolio-content{
+.contact-content, .hobbies-content, .carousel-description{
   display:block;
   margin: 1em;
   overflow:hidden;
   line-height: 20px;
   font-family:"Questrial";
-  text-align:center;
+  text-align:left;
 }
+
+/*
+* Portfolio
+*/
+.carousel-images{
+    height:auto;
+    overflow:hidden;
+    align-items:center;
+    display:flex;
+    flex-flow: column nowrap;
+    color: #797979;
+}
+
+.slider-img{
+  width: 50%;
+  margin: 1em auto auto auto;
+}
+
+.carousel-description{
+  margin:0;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+
+}
+
 
 /*
 * Top
 */
 .scroll{
   opacity:0.5;
-  background-color: #cce7ff;
+  background-color: gray;
   width:40px;
   height:40px;
   position:fixed;
@@ -301,18 +394,21 @@ hr{
 }
 
 /**
-* Footer 
+* Footer
 */
-footer{
-  clear:both;
-  max-width: 75%;
-    width:50%;
-    margin: 0 auto; 
+.footer{
+  float:left;
+  position:relative;
+  bottom:0;
+  margin: 5em 5em 0 20em;
     text-align:center;
     font-family:"Questrial";
+    max-width: 60%;
+    width:50%;
+    height:auto;
 }
 
-footer p{
+.footer p{
   color: #686970;
     text-decoration: none;
     font-size:11px;
@@ -324,8 +420,26 @@ footer p{
   padding-bottom:1em;
 }
 
+
+@media only screen and (max-width:700px) {
+  /* For mobile phones: */
+ .footer{
+    color:#CCD1D1;
+    float:none;
+    position:relative;
+    max-width: 80%;
+    width:70%;
+    border-radius: 20px;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    padding-top:1em;
+    margin: 5em auto 0 auto;
+}
+}
+
 /**
-* Social 
+* Social
 */
 .social {
   font-size:20px;
@@ -333,6 +447,87 @@ footer p{
 }
 
 .social a{
-  color:#bc8f8f;
+  color:rgba(0,0,0,0.7);
   padding:0.5em;
+}
+
+/*
+* Easter
+*/
+/*
+* Easter button that leads to easter hunt
+*/
+.secretbtn{
+  opacity:0;
+  background-color: #F9EDF1;
+  width:40px;
+  height:40px;
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  border-radius:5px;
+  border:none;
+}
+
+.secretbtn:hover {
+  opacity:0;
+}
+
+.secretbtn:hover .arrow-up{
+  color: #707070;
+}
+
+/*
+* Miiru
+*  Note: Mobile version is over with about me
+*/
+.miiru-img{
+  width:200px;
+    height:auto;
+    float:right;
+    margin: 0.5em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.nextbtn, .returnbtn{
+  opacity:0.7;
+  margin:1em auto auto;
+  background-color: moccasin;
+  width:60px;
+  height:30px;
+  border-radius:5px;
+  border-color:tan;
+  display:block;
+}
+
+
+.nextbtn:hover, .returnbtn:hover{
+  opacity:0.9;
+}
+
+.nextbtn:focus, .returnbtn:focus {
+  outline:none;
+}
+
+.inputbox{
+  margin:0 auto;
+  display:block;
+  border:1px solid lightblue;
+  caret-color:pink;
+  color:mediumseagreen;
+  padding:.25em 1em .25em 1em;
+}
+
+.inputbox:focus{
+  outline:none;
+}
+
+.hidden{
+  visibility:false;
+}
+
+.show{
+  visibility:true;
 }

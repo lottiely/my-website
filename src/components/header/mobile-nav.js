@@ -6,7 +6,7 @@ class MobileNav extends Component {
 		super(props);
 		this.state ={
 			isHidden: true
-		}      
+		}
 
 		this.handleClick = this.handleClick.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
@@ -48,10 +48,9 @@ handleOutsideClick(e){
       <div className="header">
 
 		<nav>
-			<ul class="nav">
+			<ul className="nav">
 
-				<li className="dropdown animated slideInUp"><a ref={node => { this.node = node; }} onClick={this.handleClick}>Navigation <span className="caret"></span></a>
-				{this.props.children}
+				<li className="dropdown animated slideInUp"><a ref={node => { this.node = node; }} onClick={this.handleClick}> <span className="caret"></span></a>
 				{!this.state.isHidden && <Navbar />}
 				</li>
 			</ul>
