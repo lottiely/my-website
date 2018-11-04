@@ -10,7 +10,7 @@ class Resume extends Component {
    <h4>Filipino Americans in STEAM - Silicon Valley</h4>
    <p><i>January 2018 - Present</i>
    <br />
-   <a href="http://fastersv.org/">fastersv.org</a>
+   <a href="http://faster-steam.org/">faster-steam.org</a>
    <br /></p>
    <ul>
    <li>Regularly update, create, and test front-end engineering and UX design changes to Filipinos in STEAM, tech professional association.</li>
